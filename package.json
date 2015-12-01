@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/jwood803/node-training-site/issues"
   },
-  "homepage": "https://github.com/jwood803/node-training-site#readme"
+  "homepage": "https://github.com/jwood803/node-training-site#readme",
+  "dependencies": {
+    "express": "^4.13.3",
+    "jade": "^1.11.0"
+  }
 }
