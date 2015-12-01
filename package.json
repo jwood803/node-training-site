@@ -1,0 +1,20 @@
+{
+  "name": "node-training-site",
+  "version": "1.0.0",
+  "description": "Just a random site created with NodeJS and AngularJS for training purposes.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jwood803/node-training-site.git"
+  },
+  "author": "Jon Wood",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jwood803/node-training-site/issues"
+  },
+  "homepage": "https://github.com/jwood803/node-training-site#readme"
+}
