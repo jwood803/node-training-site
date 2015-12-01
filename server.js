@@ -1,16 +1,15 @@
-var http = require("http");
+var express = require("express");
 
-function handleRequest(request, response){
-    response.end('It Works!! Path Hit: ' + request.url);
-}
+var env = process.env.NODE_ENV = process.env.NODE_ENV | "dev";
 
-var port = process.env.PORT;
+var app = express();
 
-//Create a server
-var server = http.createServer(handleRequest);
+app.set("views", __dirname + "/server/views");
+app.set("view engine", "jade");
 
-//Lets start our server
-server.listen(port, function(){
-    //Callback triggered when server is successfully listening. Hurray!
-    console.log("Server listening on: %s:%s", process.env.IP, port);
+app.get("*", function (req, res) {
+    res.render("index");
 });
+
+app.listen(process.env.PORT);
+console.log("Listening on port " + process.env.PORT);
