@@ -1,5 +1,28 @@
 doctype
 html
   head
+    link(rel='stylesheet', href='/bootstrap/dist/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/AngularJS-Toaster/toaster.css')
   body
-    h1 Hello World!
+    div.container
+      div.row
+        div.col-md-6(ng-app='app', ng-controller='viddlerController')
+          h2 Viddler Upload
+          h3 {{ myVal }}
+          form(action="post")
+            div.form-group
+              label(for="username") Username
+              input.form-control(type="text", id="username", placeholder="Username")
+            div.form-group
+              label(for="password") Password
+              input.form-control(type="password", id="password", placeholder="Password")
+            div.form-group
+              label(for="apiKey") API Key
+              input.form-control(type="text", id="apiKey", placeholder="API Key")
+            div.form-group
+              label(for="videos") Upload Video(s)
+              input(type="file", id="videos", multiple)
+            div.form-group
+              button.btn.btn-success(type="submit") Login and Upload
+              
+    include ../shared/scripts
