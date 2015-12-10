@@ -1,28 +1,29 @@
 doctype
 html
   head
+    title Viddler Upload
     link(rel='stylesheet', href='/bootstrap/dist/css/bootstrap.min.css')
     link(rel='stylesheet', href='/AngularJS-Toaster/toaster.css')
   body
     div.container
       div.row
-        div.col-md-6(ng-app='app', ng-controller='viddlerController')
+        div.col-md-6(ng-app='app', ng-controller='viddlerController as ctrl')
+          toaster-container(toaster-options="{'time-out': 3000, 'close-button':true, 'animation-class': 'toast-top-center'}")
           h2 Viddler Upload
-          h3 {{ myVal }}
-          form(action="post")
+          form(method="POST", enctype="multipart/form-data", ng-submit='ctrl.upload(ctrl)')
             div.form-group
-              label(for="username") Username
-              input.form-control(type="text", id="username", placeholder="Username")
+              label(for="user") Username
+              input.form-control(type="text", id="user", ng-model='ctrl.user', placeholder="Username")
             div.form-group
-              label(for="password") Password
-              input.form-control(type="password", id="password", placeholder="Password")
+              label(for="pass") Password
+              input.form-control(type="password", id="pass", ng-model='ctrl.pass', placeholder="Password")
             div.form-group
-              label(for="apiKey") API Key
-              input.form-control(type="text", id="apiKey", placeholder="API Key")
+              label(for="key") API Key
+              input.form-control(type="text", id="key", ng-model='ctrl.key', placeholder="API Key")
             div.form-group
               label(for="videos") Upload Video(s)
-              input(type="file", id="videos", multiple)
+              input(type="file", id="videos", name="videos", fileread='ctrl.files', multiple)
             div.form-group
-              button.btn.btn-success(type="submit") Login and Upload
+              button.btn.btn-primary(type="submit") Login and Upload
               
     include ../shared/scripts
