@@ -43,7 +43,7 @@ app.post("/upload", function(req, res) {
           res.send(JSON.parse(error));
         }
         
-        res.send(JSON.parse(body));
+        res.send(body);
       });
 
 });
